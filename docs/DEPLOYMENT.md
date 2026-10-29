@@ -1,5 +1,7 @@
 # Cloudflare Workers 静态部署计划
 
+当前站点：[智能费率推荐](https://smart-fee-recommender.yfsper233-fees.workers.dev/)。首次发布已完成，版本、验收与自动部署状态见 [部署记录](DEPLOYMENT-RECEIPT.md)。
+
 ## 资源
 
 | 资源 | 数量与用途 |

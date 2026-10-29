@@ -1,5 +1,7 @@
 # 智能费率推荐
 
+在线访问：[智能费率推荐](https://smart-fee-recommender.yfsper233-fees.workers.dev/)。
+
 浏览器实时订阅 mempool.space 的下一个候选区块，并列展示“单步最优”和“累计均值最优”的费率、优先级与选点图表。
 
 项目采用纯静态部署：数据订阅与计算均在浏览器内完成，不依赖数据库、服务端 WebSocket 代理或 Worker 计算入口。
@@ -41,7 +43,9 @@ npm run deploy:check
 4. 首次部署使用 Cloudflare 分配的 `workers.dev` 地址；自定义域名可后续接入。
 5. 验收静态资源、mempool WebSocket、两种算法与断线过期状态。
 
-本地部署和详细资源清单见 [部署计划](docs/DEPLOYMENT.md)，项目范围与验收标准见 [项目说明](docs/PROJECT.md)。当前仓库初始化不代表已经完成 Cloudflare 上线。
+已通过 Cloudflare API 完成首次静态发布；浏览器实时订阅、两种算法、图表和参数切换已验收。GitHub Actions 已启用验证；Cloudflare GitHub 集成尚未授权，因此后续提交暂不会自动部署。
+
+本地部署和详细资源清单见 [部署计划](docs/DEPLOYMENT.md)，本次版本与验收范围见 [部署记录](docs/DEPLOYMENT-RECEIPT.md)，项目范围与验收标准见 [项目说明](docs/PROJECT.md)。
 
 ## 目录
 
