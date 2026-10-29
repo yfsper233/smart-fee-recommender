@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main id="fee-demo">
+  <header class="page-header"><h1 id="page-title"></h1><div class="live-row" aria-live="polite"><span id="status" data-state="pending"></span></div></header>
+  <p id="observation" class="observation secondary"></p>
+  <section class="search-controls">
+    <div class="priority-control"><label for="target" id="target-label"></label><output id="target-value" for="target">60%</output><input id="target" type="range" min="1" max="95" step="1" value="60" aria-describedby="priority-description"></div>
+    <div class="window-control"><label for="marginal-step" id="marginal-step-label"></label><select id="marginal-step"></select></div>
+    <p id="priority-description" class="secondary"></p>
+  </section>
+  <p id="search-range" class="search-range secondary"></p>
+  <p id="result-notice" class="result-notice" aria-live="polite" hidden></p>
+  <div class="recommendation-grid">
+    <section class="recommendation window-recommendation" aria-live="polite">
+      <h2 id="recommendation-title"></h2>
+      <p id="window-explanation" class="method-description"></p>
+      <div class="recommendation-main"><strong id="recommended-rate">—</strong><span class="unit"></span><span id="recommended-priority"></span></div>
+      <dl class="method-metrics"><div><dt class="cost-label"></dt><dd><span id="window-cost">—</span><small class="unit"></small></dd></div><div><dt class="efficiency-label"></dt><dd><span id="window-efficiency">—</span><small class="efficiency-unit"></small></dd></div></dl>
+      <p id="window-note" class="result-note"></p>
+    </section>
+    <section class="recommendation cumulative-recommendation" aria-live="polite">
+      <h2 id="cumulative-title"></h2>
+      <p id="cumulative-explanation" class="method-description"></p>
+      <div class="recommendation-main"><strong id="cumulative-rate">—</strong><span class="unit"></span><span id="cumulative-priority"></span></div>
+      <dl class="method-metrics"><div><dt class="cost-label"></dt><dd><span id="cumulative-cost">—</span><small class="unit"></small></dd></div><div><dt class="efficiency-label"></dt><dd><span id="cumulative-efficiency">—</span><small class="efficiency-unit"></small></dd></div></dl>
+      <p id="cumulative-note" class="result-note"></p>
+    </section>
+  </div>
+  <figure class="distribution-section"><figcaption id="chart-title"></figcaption><div id="chart-host"><svg id="chart" role="img"></svg><div id="tooltip" role="tooltip" hidden></div></div><div id="chart-legend" class="legend"></div></figure>
+  <div class="efficiency-grid">
+    <section class="efficiency-panel marginal-section"><h2 id="marginal-title"></h2><div id="marginal-chart-host"><svg id="marginal-chart" role="img"></svg></div><p id="marginal-caption" class="chart-caption"></p></section>
+    <section class="efficiency-panel cumulative-section"><h2 id="cumulative-chart-title"></h2><div id="cumulative-chart-host"><svg id="cumulative-chart" role="img"></svg></div><p id="cumulative-caption" class="chart-caption"></p></section>
+  </div>
+  <details><summary id="rules-label"></summary><ul id="rules"></ul><section class="requirements"><h2 id="requirements-title"></h2><table><thead><tr><th id="requirement-heading"></th><th id="quote-heading"></th><th id="attained-heading"></th></tr></thead><tbody id="requirement-rows"></tbody></table></section></details>
+  <footer><span id="precision"></span><div><a id="source-link" href="https://mempool.space/docs/api/websocket#track-mempool-block" target="_blank" rel="noreferrer"></a><a id="graph-link" href="https://github.com/mempool/mempool/blob/f669f14851fb62b5fdbd16f662667228354b027f/frontend/src/app/components/fee-distribution-graph/fee-distribution-graph.component.ts#L61-L100" target="_blank" rel="noreferrer"></a></div></footer>
+</main>
+<script type="module" src="/app.mjs"></script>
+</body>
+</html>

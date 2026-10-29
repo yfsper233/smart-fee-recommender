@@ -1,0 +1,24 @@
+{
+  "name": "smart-fee-recommender",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "智能费率推荐：实时比较单步最优与累计均值最优",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "preview": "node scripts/dev.mjs dist",
+    "check": "node scripts/check.mjs",
+    "test": "node --test test/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "verify": "npm run check && npm test && npm run build",
+    "deploy:check": "wrangler deploy --dry-run --outdir .wrangler/dry-run",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.155.0"
+  }
+}
